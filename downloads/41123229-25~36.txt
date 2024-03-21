@@ -1,0 +1,229 @@
+﻿
+3.1. How would this integration look like in practical terms
+3.1.在實際應用中，這種整合會是什麼樣子呢？
+
+As mentioned in CHAPTER 2 the main idea of PLM is to manage change in all processes related to the product, and it does so mainly through the use of virtualization. The word virtualization here denotes representation of item of the real world to the digital space and, as one can imagine, there are several levels of abstraction through which a real object or process can be represented. As consequence there is no exact consensus regarding PLM of how deep and/or detailed the virtual representation must be to serve its purpose.
+如第2章所述，PLM的主要思想是管理與產品相關的所有流程中的變化，主要通過虛擬化來實現。這裡的虛擬化一詞表示將現實世界的物品表示為數位空間中的物品，可以想象，有多種抽象層次可以表示真實對象或流程。因此，就PLM而言，對於虛擬表示必須有多深入和/或詳細以發揮其作用，沒有確切的共識。
+
+In an ideal world that would be the lowest form of abstraction which, essentially, would come down to a digital twin as explained in the CHAPTER 2. This is a ‘1 to 1’ digital representation of every aspect of the production cycle where every part involved would have a digital representation that not only carry the physical characteristics of the item but also all its information produced over time. To this end, as explained in CHAPTER 2, MES takes a fundamental role in obtaining the real time information required for the DT even be possible.
+    在理想的情況下，最低程度的抽象將是基本上相當於第2章中所解釋的數位孿生。這是生產周期的每個方面的“1對1”數位表示，涉及的每個部分都將具有數位表示，不僅携帶物品的物理特性，還包含其隨時間產生的所有信息。為此，正如第2章所解釋的，MES在獲取所需的實時信息方面起著基本作用，甚至使數位孿生成為可能。
+For instance, a CNC machine would have a digital 3D model for simulation as well as a fully integrated list of all the pieces it produces, data regarding its current level of production, the current wear of its mechanical pieces, all other machines it relates to, history of all the alterations and improvements by which it was affected and many other aspects, all well packaged in an intuitive graphical user interface (GUI) that allows for maximum interaction.
+例如，一台CNC機器將具有數位3D模型用於模擬，以及一個完全集成的列表，其中包含它生產的所有零件，關於它目前生產水平的數據，機械零件的當前磨損情況，以及與其相關的所有其他機器，以及它所受影響的所有更改和改進的歷史記錄等等，所有這些都被很好地打包在直觀的圖形用戶界面（GUI）中，使其可以進行最大程度的互動。
+
+
+
+
+
+
+Outside of fiction, we are yet to achieve such level of virtualization. It takes too much time and money to obtain and organize information to such a level of minutia, specially, the aspects that need to be inserted by hand, not to mention the subjectiveness of how this information can be integrated and interacted with. Regardless of that it is useful to identify, within the ideal, the aspects of most importance for this implementation.
+    在現實中，我們尚未達到這種程度的虛擬化。獲取和組織信息到這種極細節的水平需要太多的時間和金錢，特別是需要手工插入的方面，更不用說這些信息如何集成和互動的主觀性了。儘管如此，在理想情況下，識別對於這種實施最重要的方面是有用的。
+Those are:
+這些方面包括：
+
+§ The means of virtualization – What sort of information is used to build the virtual items. This includes the metadata and files that are directly attached to the item. In an ideal fashion this would contain all possible information available about the item.
+虛擬化的手段 - 用於建立虛擬項目的信息類型。這包括直接附加到項目的元數據和文件。在理想情況下，這將包含有關項目的所有可能信息。
+
+§ The means of data input - How this information is being loaded and organized. Ideally this information would be loaded into the system as automatically as possible, be it by means of MES during quality control or through the use of automated input tools like bar code scanners.
+數據輸入的方式 - 這些信息如何被載入和組織。理想情況下，這些信息應盡可能自動地載入系統，無論是通過MES在質量控制期間還是通過使用條碼掃描儀等自動輸入工具。
+
+
+
+
+§ The means of access – How this information is presented to the users. Although more subjective than the previous aspects this is incredibly important to the way the system is interacted with. How intuitive it is the information availability plays right into the core strengths of PLM. Afterall, everything would be for nothing (even if all else would be perfect) if the only way to interact with the system were a command line interface that would make difficult for the end users to access the information.
+訪問手段 - 這些信息如何呈現給用戶。儘管比前面的方面更主觀，但這對系統的交互方式非常重要。信息可用性有多直觀直接影響到PLM的核心優勢。畢竟，即使其他方面都完美，如果與系統互動的唯一方式是一個命令行界面，使最終用戶難以訪問信息，那麼一切都將是徒勞的。
+
+§ The means of integration - How items and their contained information can interact and benefit from one another, i.e., the integration with other systems and key softwares. E.g., if an item has access to a cad file, there should be no need to fill in the metadata fields by hand. Hoe items can automatically affect other items also plays into this aspect.
+整合手段 - 項目及其包含的信息如何互動並相互受益，即與其他系統和關鍵軟體的整合。例如，如果一個項目可以訪問CAD文件，就不需要手工填寫元數據字段。項目如何自動影響其他項目也與此方面相關。
+
+4. CHAPTER
+   章節四
+
+INTRODUCTION TO THE COMPANY AND PRODUCT
+	                             公司和產品介紹
+As one can imagine, one of the unique aspects of this work is its focus in one specific software solution that tend to be quite flexible in terms of ease of implementation to different sorts of business. This is contrary to most use cases regarding PLM implementation where the business case is the constant and the system is built around it. Nonetheless, in order to evaluate Odoo as a PLM+MES tool, it is important to consider an example. The advantage here is that a fictional company can be picked for this end maximizing the perceived effect of the software during a simulation.
+正如大家可以想象的，這項工作的獨特之處之一是它專注於一個特定的軟體解決方案，這在實施到不同類型的企業時往往相當靈活。這與大多數關於PLM實施的用例相反，其中業務案例是不變的，系統是圍繞它建立的。儘管如此，為了評估Odoo作為PLM+MES工具，考慮一個例子是很重要的。這裡的優勢在於可以為此目的挑選一家虛構公司，在模擬過程中最大程度地提高軟體的感知效果。
+
+It is considering all those previously mentioned systems that, for the sake of exemplification, the theoretical company was organized in the molds of Industry 4.0. This company is a recently founded small case manufacturing company that uses plastic injection molding as their primary mean of production and uses additive manufacturing and fast prototyping as part of their business strategy. As explained in chapter 2 those are great examples of the path that industry is taking regarding innovation where mass production is becoming slowly less important than product variety and time to market.
+考慮到所有先前提到的系統，為了舉例說明，理論上的公司被組織成了工業4.0的模式。這家公司是一家最近成立的小型案例製造公司，以塑料射出成型作為他們的主要生產手段，並將增材製造和快速原型製作作為他們的業務策略的一部分。正如第2章中所解釋的，這些是工業在創新方面所採取的路徑的很好的例子，其中大規模生產正在慢慢變得不那麼重要，而產品多樣性和上市時間變得更加重要。
+
+In order to maximize the tracking of change, most of its business are based on lower production batches on mainly automated machinery. This company focus in the production of injected plastic products and rely heavily in flexible machinery for setting production and prototyping. Having that in mind, it should be simple enough to simulate continuous improvement of both product and process to the extent of the evaluated software. Since this sort of everchanging production is extremely dependent on information management of all kinds, it must prove to be a perfect base for applied PLM+MES.
+為了最大程度地跟蹤變化，這家公司的大部分業務都是基於主要是自動化機械的較低生產批次。這家公司專注於注塑塑料產品的生產，並且在設置生產和原型製作方面非常依賴靈活的機械。考慮到這一點，應該相當簡單地模擬產品和流程的持續改進，以評估軟體的範圍。由於這種不斷變化的生產極度依賴於各種信息的管理，它必須被證明是應用PLM+MES的完美基礎。
+
+In this example the company has already implemented, since its recent foundation, the Odoo software and has taken all the necessary training and steps to its proper use. This allow the removal of the boundaries and limitations that are so common regarding implementation of the PLM+MES system to an already existing business, i.e., dependences on legacy systems administrative resistance to change or integration to old procedures. These are obviously important, but it is not within the scope of this work.
+在這個例子中，公司自從成立以來已經實施了Odoo軟體，並採取了所有必要的培訓和步驟來正確使用它。這消除了對於已經存在的企業實施PLM+MES系統時如此普遍的界限和限制，即對於遺留系統的依賴、管理層對變革的阻力或對舊流程的整合。這些顯然很重要，但這不在本工作的範圍內。
+
+The company aims to produce a completely new product by the end of the year. After doing so, the company improved the process of production for said product. Once there is the need for product improvement, said improvement was performed as well.
+       該公司的目標是在年底前生產一個全新的產品。完成後，該公司改進了該產品的生產過程。一旦有產品改進的需要，該改進也會被執行。
+
+The following diagram (Figure 9) will be taken into consideration as the path of product development and improvement:
+以下圖表（圖9）將作為產品開發和改進的路徑。
+
+
+
+
+Figure 9 Development diagram
+產品開發圖解9
+
+This path aims to transmit to the reader an iterative approach towards development and improvement. The idea is followed by a product design for which a cycle of prototyping and redesign takes effect until satisfactory result is achieved. Then a similar cycle takes place regarding the production process. At the end of this stage initial development is done and the actual production can begin.
+這條路徑旨在向讀者傳達一種對開發和改進的迭代方法。該想法是先進行產品設計，然後進行一個原型製作和重新設計的循環，直到達到滿意的結果。然後，類似的循環在生產過程中發生。在這個階段結束時，初始開發完成，實際生產可以開始。
+
+It is at this point that ways of stablishing the continuous improvement is important. In the case of this company, we are only considering two main types of upgrade paths, those being, product upgrade and process upgrade respectively.
+在這一點上，確立持續改進的方式就顯得很重要。對於這家公司，我們只考慮兩種主要的升級途徑，分別是產品升級和流程升級。
+
+
+
+
+
+
+
+4.1. The products and processes
+4.1. 產品與流程
+
+Change and effect are the focus of the PLM+MES implementation as such the subject of said change would ideally be something that could afford a reasonable amount of freedom of design. Although the effects of a well implemented PLM+MES should be substantial even in rigid manufacturing environments, where the change is extremely limited, the system will produce much more perceivable change in an enterprise that thrives in innovation because there will be more opportunities to improve the system and gain feedback.
+變化和影響是PLM+MES實施的重點，因此理想情況下，變化的主題應該是能夠提供合理的設計自由度的事物。儘管在嚴格的製造環境中，變化非常有限，一個良好實施的PLM+MES系統的效果應該是顯著的，但在一個擅長創新的企業中，系統會產生更加明顯的變化，因為在這裡會有更多改進系統並獲得反饋的機會。
+
+From the perspective of improvement, if you compare a product that is a result from sheet metal stamping (Figure 10) to an equivalent product that is the result of a CNC milling procedure (Figure 11) it is easy to perceive that the CNC milled product is more welcoming to upgrades. While the stamping is low cost (by comparison) it depends on heavy high precision metal dyes that are extremely expensive to produce. This means that the cost of enacting change to it is much higher and thus the effect of a system that thrives on tracking change becomes limited.
+
+從改進的角度來看，如果將通過板金沖壓製造的產品（圖10）與通過數控銑削程序製造的相等產品（圖11）進行比較，可以很容易地感受到數控銑削產品更容易進行升級。儘管沖壓成本較低（相對而言），但它依賴於昂貴的高精度金屬模具，生產成本極高。這意味著對其進行改變的成本要高得多，因此，一個依賴追踪變化的系統的效果會受到限制。
+
+
+
+
+Figure 10 Example of stamped AK74 pattern rifle receiver (Brownnells.com)
+圖10 針對AK74樣式步槍機匣的沖壓示例（來自Brownnells.com）
+
+
+
+
+Figure 11 Example of milled AK74 pattern rifle receiver (sharpsbros.com)
+圖11 針對AK74樣式步槍機匣的銑削示例（來自sharpsbros.com）
+
+In the case of this fictional company, it has been determined that the best way to exemplify the PLM+MES effects would be to have products designed around plastic injection molding. It might seem unintuitive at first to consider this manufacturing procedure, like the stamping procedure previously described, since it too depends on high precision molds during production. However, the main differences between the two is regarding ease of prototyping and the cost of upgrading.
+對於這家虛構公司來說，已經確定了最好的方式來說明PLM+MES的效果是設計基於塑料射出成型的產品。一開始考慮這種製造程序可能看起來有些不合常理，就像之前描述的沖壓過程一樣，因為它在生產過程中也依賴於高精度模具。然而，這兩者之間的主要區別在於原型製作的便利性和升級的成本。
+
+
+Injection molding is a broad and complex field of engineering that involves a huge variety of materials and methods, little of which is of the concern of this work. It is however relevant to point out that for the most part, the pressures involved in the injection molding are one order of magnitude lower than the when we are dealing with steel; softer materials can be used on their molds like CNC milled aluminum. At the same time, new advancements in the field of additive manufacturing have made possible to prototype plastic parts with much closer physical characteristics to the end result of a injected piece. Sometimes even prototype molds (Figure 12) can be used for a lower volume test runs during process upgrades.
+
+射出成型是一個廣泛而複雜的工程領域，涉及各種各樣的材料和方法，其中大部分與本工作無關。然而，值得指出的是，射出成型所涉及的壓力大部分情況下比處理鋼材時低一個數量級；可以在其模具上使用較軟的材料，如數控銑削鋁。同時，增材製造領域的新進展使得可以製作出與注塑件最終結果非常接近的塑料零件原型。有時甚至可以使用原型模具（圖12）進行低容量測試運行，以進行流程升級。
+表單的頂端
+
+
+Figure 12 Example of injection mold made using a 3D printer (thefabricator.com) 
+                   圖12 通過3D打印製作的注塑模具示例（來自thefabricator.com）
+Additive manufacturing has become an incredible tool for ultra-flexible production. This mindset of continuous improvement, especially when regarding prototyping and iterative design, is a hallmark of the lean mentality that is so relevant in the modern industry.
+    增材製造已成為極具靈活性生產的不可思議工具。尤其是在原型製作和迭代設計方面，這種持續改進的思維模式是現代工業中非常重要的精益理念的典範。
+As mentioned in the previous section, in this case study it is considered the creation of a new product and its production process by the fictional company. This product consists in a plastic small form factor computer case, composed of 3 different parts (Figure 13) that are expected to be designed and prototyped considering combination of additive manufacturing and CNC milling towards a plastic injection molding production.
+    正如前一節所提到的，在這個案例研究中，考慮到了這家虛構公司對一個新產品及其生產過程的創建。該產品是由3個不同部分組成的塑料小型電腦機箱（見圖13），預計將通過增材製造和數控銑削的結合來進行設計和原型製作，以達到塑料射出成型的生產目標。
+
+
+Figure 13 3D exploded view of the theoretical product
+圖13 理論產品的三維分解視圖
+
+
+4.1.1. Part A
+
+PART-A (Figure 14) is the core structure of the computer case. It is expected to comport all the pieces necessary for the proper function of the small form factor computer in question. To this end a raw material A was selected to be Acrylonitrile Butadiene Styrene (ABS) this is an opaque thermoplastic polymer and an engineering grade plastic. It is commonly used to produce electronic parts such as phone adaptors, keyboard keys and wall socket plastic guards.
+PART-A（見圖14）是計算機機箱的核心結構。預計它將包含所有必要的零件，以使所需的小型電腦正常運作。為此，選擇了一種原材料A，即丙烯腈丁二烯苯乙烯（ABS），這是一種不透明的熱塑性聚合物和一種工程級塑料。它通常用於生產電子零件，如手機適配器、鍵盤按鍵和牆壁插座塑料護套。
+
+
+Figure 14 Isometric view of Part A
+圖14 Part A的等角視圖
+
+The main reasons for choosing this material specifically are its toughness, its good dimensional stability (resistance to change dimensions after cooling), its high impact resistance and surface hardness. Finally, it is also commonly available in the form of 3D printing filament for extrusion 3D printers which should prove to be quite useful during prototyping.
+選擇這種材料的主要原因是它的耐用性、良好的尺寸穩定性（冷卻後尺寸不易變化）、高衝擊抗性和表面硬度。最後，它還常常以3D打印的形式作為擠出式3D打印機的材料供應，這在原型製作過程中應該非常有用。
+
+4.1.2. Parts B and C
+
+Parts B and C are lids that should snap into place, closing the system. These are very simple pieces and require a certain level of elasticity so it can deform to assure a screwless assembly. These two identical parts are going to be made with Thermoplastic Polyurethane (TPU), because of its elastic nature and great tensile and tear strength. This sort of polymer is often used to produce parts that demand a rubber-like elasticity. TPU performs well at high temperatures and is commonly used in power tools, cable insulations and sporting goods. Finally, TPU is also available in the form of filament for 3D printers which, for the simulation, will be used for prototyping.
+
+部件B和C是蓋子，應該能夠啪地一聲合上，封閉系統。這些是非常簡單的零件，需要一定程度的彈性，以便在無螺絲的情況下變形，確保組裝。這兩個相同的零件將使用聚氨酯熱塑性彈性體（TPU）製造，因為它具有彈性和出色的拉伸和撕裂強度。這種類型的聚合物通常用於生產需要橡膠般彈性的零件。TPU在高溫下表現良好，常用於電動工具、電纜絕緣和運動用品。最後，TPU也以3D打印的方式供應，因此，在模擬中，將用於原型製作。
+
+Figure 15 Parts B and C
+圖15 零件B和C
+
+4.1.3. Molds 模具
+
+Ideally all molds should be made of steel, for longevity of the mold and product quality. That being said, the injected plastics that are being selected for all parts are not so pressure dependent and their forms are not so complex, so it is assumed that aluminum molds made with a precision CNC machining should suffice to produce said parts.
+理想情況下，所有模具都應該使用鋼材製造，以確保模具和產品質量的持久性。儘管如此，所選擇的所有部件所使用的注塑塑料並不如此依賴壓力，它們的形式也不是很複雜，因此可以假設使用精密數控加工製作的鋁模具足以生產這些部件。
+
+It is also assumed that all molds are simple enough to be prototyped using 3D printing. Although this is not always true, it was determined representative enough for this simulation. The type of material used in those prototypes is high temperature resign cured using an SLA 3DPrinter. Additionally, the mold will be considered the main physical aspect to be developed when regarding the production process because it something that directly affects the production as well as something that can be produced in house and tracked as a product would.
+
+    同時也假設所有的模具都足夠簡單，可以使用3D打印技術進行原型製作。儘管這不一定總是正確的，但確定對於這個模擬來說具有代表性。這些原型所使用的材料類型是使用SLA 3D打印機固化的高溫樹脂。此外，將模具視為生產過程中要開發的主要物理方面，因為它直接影響生產，並且可以在內部製造和跟踪，就像產品一樣。
+
+
+
+4.2. What is analized during the simulation
+4.2. 模擬過程中分析的內容
+
+Taking into consideration the diagram, shown in Figure 9, as well as the main aspects of a successful integration of PLM and MES as described in the section 3.1, this experiment aims to produce commentary regarding the following relevant questions in Table 1.
+    考慮到圖9中的圖表以及在第3.1節中描述的PLM和MES成功整合的主要方面，本實驗旨在對表1中提出的以下相關問題進行評論。
+Table 1 Summary of questions to be answered
+Table 1 要回答的問題摘要
+
+  Category 類別                             Questions 問題
+  How  does  the  software                Are all aspects of the product lifecycle represented? 產品生命周期的所有方面都有所代表嗎？
+  deals with items? 軟體如何處理物品？
+  How well are each of those items represented? 這些項目被多好地呈現了？
+  How easy it is to create a brand- new   How the product is depicted? 產品如何描述？
+   product?
+   創建全新產品有多容易？
+  How does the product integrate and reference relevant files? 產品如何整合並參考相關文件？
+  Does changing one affects the other? 更改其中一個是否會影響另一個？
+  How easy it is to create a brand-new    How the process is depicted? 流程如何呈現？
+   production process?
+   創建全新的生產流程有多容易？
+  How does the process integrate and reference the product it produces? 流程如何整合和參考其產出的產品？
+  Does changing one affects the other? 改變其中一個是否會影響另一個？
+  How easy is to improve an existing      How easy it is to update its metadata? 更新其元數據有多容易？
+   product?
+   改進現有產品有多容易？
+  How easy it is to determine the effects of the change? 決定變更的影響有多容易？
+  How does the software deals with different product revisions? 軟體如何處理不同的產品修訂？
+  How easy it is to improve an existing   How easy it is to update its metadata? 更新其元數據有多容易？
+   production
+   process?改進現有的生產流程有多容易？
+  How easy it is to determine the effects of the change?決定變更的影響有多容易？ 
+  How does the software deals with different production process
+  revisions? 軟體如何處理不同的生產流程修訂？
+  How easy is to find data related to     How easy is find production numbers? 找到生產數據有多容易？
+   product or process?
+   找到與產品或流程相關的數據有多容易？
+  How does Odoo generate performance data? Odoo如何生成性能數據？
+  How does the software present performance change as a result of a
+  upgrade? 軟體如何呈現升級後的性能變化？
+
+5. CHAPTER
+第五章
+
+THE ODOO SOFTWARE
+Odoo 軟體
+
+5.1. Introduction to the Odoo software
+5.1. Odoo軟體介紹
+Odoo is a commercial business management software with strong ties to the open source community. Initially started as open source ERP software becoming well received as an affordable and intuitive package that thrived on integration and expandability. Since then, as the company experienced accelerated growth, it shifted their business model to include an enterprise paid version as well as an online service.
+Odoo是一款商業管理軟體，與開源社區有著密切的聯繫。最初作為開源ERP軟體開始，因其價格實惠、直觀易用、且擅長整合和擴展而受到廣泛歡迎。隨著公司快速增長，他們調整了商業模式，包括推出企業付費版本和在線服務。
+
+As mentioned in the section 2.2, modern ERP systems are usually modular and, in the case of Odoo, this modularity is particularly evident due to the incredible amount of expansion provided by community developed modules as well as company developed modules that are highly integrated. This extendibility is what makes this software so relevant to the topic of PLM+MES integration since there are present modules for PLM as well as noticeable MES functionalities within their manufacturing modules.
+正如在第2.2節中提到的，現代ERP系統通常是模塊化的。在Odoo的情況下，這種模塊化特別明顯，因為社區開發的模塊以及公司開發的模塊提供了大量的擴展功能，並且高度集成。這種可擴展性使得這款軟體與PLM+MES整合的話題密切相關，因為在其製造模塊中存在用於PLM的模塊，以及明顯的MES功能。
+
+Within the scope of this thesis, the objective is to utilize this software on the management of the previously mentioned fictional company and draw conclusions regarding how effective the integration of PLM and MES is already present within this system.
+在這個論文的範圍內，目標是利用這款軟體來管理之前提到的虛構公司，並得出關於PLM和MES整合在這個系統中的效果如何的結論。
+
+
+5.1.1. How it works
+5.1.1. 它是如何運作的
+
+
+The software can be installed in most x86 computers and it supports several operating systems including windows and all the main Linux distributions.
+該軟體可以安裝在大多數x86架構的電腦上，並支援多個操作系統，包括Windows和所有主要的Linux發行版。
+
+Ideally, the Odoo software is installed in a computer connected to a local area network and starts a SQL database that holds all the necessary information and files produced by the business (Figure 16). Said computer works essentially as a server and accessed via a browser by the other machines present in the network. This computer can be a dedicated server or a working desktop in use, but it is important to remember that it must remain ON and connected throughout the entire time the software is required to function.
+
+理想情況下，Odoo軟體安裝在連接到本地區域網絡的電腦上，並啟動一個SQL數據庫，該數據庫保存了企業產生的所有必要信息和文件（見圖16）。該電腦基本上充當服務器，可以通過網絡中的其他機器使用瀏覽器訪問。這台電腦可以是專用服務器，也可以是正在使用的工作桌面，但重要的是要記住，軟體需要正常運行期間，它必須保持開啟並連接。
+
+
+Figure 16 Function Diagram of Odoo configuration A
+圖16：Odoo配置A的功能圖解
+
+Another option is to use the hosting service provided by Odoo SA (Figure 17). In this case the system would be hosted by them and data would be stored in their cloud. This is a good fit for many small businesses specially if they are particularly fond of the website related modules (used to build and manage web sites and e-stores). It is however network dependent which may pose a problem in some instances.
+另一個選擇是使用Odoo SA提供的托管服務（見圖17）。在這種情況下，系統將由他們托管，數據將存儲在他們的雲中。對於許多小型企業來說，這是一個很好的選擇，特別是如果他們特別喜歡與網站相關的模組（用於構建和管理網站和電子商店）。然而，這是依賴於網絡的，這在某些情況下可能會存在問題。
